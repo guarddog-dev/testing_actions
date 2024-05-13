@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Run Docker Container
+    - name: Run fido binaries container
       uses: docker://guarddogai/binaries:1.1.1
       with:
         args: -it --name binaries_01
