@@ -1,9 +1,9 @@
-name: Run Docker Container
+name: Build Binaries for prod
 
 on:
   push:
     branches:
-      - main  # Cambia esto al nombre de tu rama principal si es diferente
+      - main 
 
 jobs:
   run_docker_container:
@@ -13,7 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Run fido binaries container
+    
+    - name: Build Binaries for vfido
       uses: docker://guarddogai/binaries:1.1.1
       with:
-        args: -it --name binaries_01
+        args: docker_binaries_dev -it --name binaries 
+        
+        
